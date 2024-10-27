@@ -1,11 +1,9 @@
-// src/app/services/message.service.ts
-
-
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Message } from '../models/message.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -15,29 +13,24 @@ export class MessageService {
   private messagesSubject = new BehaviorSubject<Message[]>([]);
   messages$ = this.messagesSubject.asObservable();
 
-  constructor() {
-    if (!environment.supabaseUrl || !environment.supabaseKey) {
-      console.error('Supabase configuration is missing');
-      return;
-    }
-
-    this.supabase = createClient(
-      environment.supabaseUrl,
-      environment.supabaseKey
-    );
-    
-    // Đăng ký lắng nghe thay đổi realtime
-    this.supabase
-      .channel('messages')
-      .on('postgres_changes', 
-        { event: '*', schema: 'public', table: 'messages' },
-        (payload) => {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    // Only initialize Supabase in the browser
+    if (isPlatformBrowser(this.platformId) && environment.supabaseUrl && environment.supabaseKey) {
+      this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
+      
+      // Register for real-time changes
+      this.supabase
+        .channel('messages')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'messages' }, (payload) => {
           this.loadMessages();
-      })
-      .subscribe();
+        })
+        .subscribe();
 
-    // Load messages ban đầu
-    this.loadMessages();
+      // Load initial messages
+      this.loadMessages();
+    } else {
+      console.error('Supabase configuration is missing or running on the server');
+    }
   }
 
   async loadMessages() {

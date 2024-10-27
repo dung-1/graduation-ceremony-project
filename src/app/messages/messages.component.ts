@@ -1,8 +1,6 @@
-// src/app/components/messages/messages.component.ts
-import { Component, OnInit,PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from '../services/message.service';
-import { Message } from '../models/message.model';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -19,16 +17,20 @@ export class MessagesComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object,
     private fb: FormBuilder,
     private messageService: MessageService
-  ) {
-    
-  }
+  ) {}
 
-  ngOnInit() {  if (isPlatformBrowser(this.platformId)) {
-    this.messageForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      content: ['', [Validators.required, Validators.minLength(5)]]
-    });
-  }}
+  ngOnInit() {
+    // Only run the following code in the browser, not during prerendering
+    if (isPlatformBrowser(this.platformId)) {
+      this.messageForm = this.fb.group({
+        name: ['', [Validators.required, Validators.minLength(2)]],
+        content: ['', [Validators.required, Validators.minLength(5)]]
+      });
+
+      // Trigger loading messages only on the client side
+      this.messageService.loadMessages();
+    }
+  }
 
   async onSubmit() {
     if (this.messageForm.valid && !this.isSubmitting) {

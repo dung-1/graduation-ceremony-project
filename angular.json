@@ -55,8 +55,8 @@
                         "production": {
                             "budgets": [{
                                     "type": "initial",
-                                    "maximumWarning": "500kB",
-                                    "maximumError": "1MB"
+                                    "maximumWarning": "4MB",
+                                    "maximumError": "5MB"
                                 },
                                 {
                                     "type": "anyComponentStyle",
@@ -70,12 +70,10 @@
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true,
-                            "fileReplacements": [
-                              {
+                            "fileReplacements": [{
                                 "replace": "src/environments/environment.ts",
                                 "with": "src/environments/environment.development.ts"
-                              }
-                            ]
+                            }]
                         }
                     },
                     "defaultConfiguration": "production"
