@@ -1,1 +1,43 @@
-<p>messages works!</p>
+<div class="invitation-container">
+    <div class="invitation-content">
+        <div class="header">
+            <h1 class="title">Tin nhắn chúc mừng</h1>
+        </div>
+        <!-- src/app/components/messages/messages.component.html -->
+        <div class="message-section">
+            <div class="message-form">
+                <h2>Gửi lời chúc</h2>
+                <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+                    <input type="text" formControlName="name" placeholder="Tên của bạn" [class.invalid]="messageForm.get('name')?.invalid && messageForm.get('name')?.touched">
+                    <div class="error" *ngIf="messageForm.get('name')?.invalid && messageForm.get('name')?.touched">
+                        <small *ngIf="messageForm.get('name')?.errors?.['required']">Vui lòng nhập tên</small>
+                        <small *ngIf="messageForm.get('name')?.errors?.['minlength']">Tên phải có ít nhất 2 ký tự</small>
+                    </div>
+
+                    <textarea formControlName="content" placeholder="Nội dung chúc mừng" [class.invalid]="messageForm.get('content')?.invalid && messageForm.get('content')?.touched"></textarea>
+                    <div class="error" *ngIf="messageForm.get('content')?.invalid && messageForm.get('content')?.touched">
+                        <small *ngIf="messageForm.get('content')?.errors?.['required']">Vui lòng nhập lời chúc</small>
+                        <small *ngIf="messageForm.get('content')?.errors?.['minlength']">Lời chúc phải có ít nhất 5 ký tự</small>
+                    </div>
+
+                    <button type="submit" [disabled]="messageForm.invalid || isSubmitting">
+          {{ isSubmitting ? 'Đang gửi...' : 'Gửi' }}
+        </button>
+                </form>
+            </div>
+
+            <div class="message-list">
+                <h2>Danh sách tin nhắn</h2>
+                <div class="message-scroll">
+                    <div class="message-item" *ngFor="let message of messages$ | async">
+                        <div class="message-header">
+                            <strong>{{ message.name }}</strong>
+                            <small>{{ message.timestamp| date:'short' }}</small>
+                        </div>
+                        <p>{{ message.content }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

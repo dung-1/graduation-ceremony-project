@@ -4,12 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-
-  ], 
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -17,8 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(withFetch())
-
+    provideHttpClient(withFetch()),
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

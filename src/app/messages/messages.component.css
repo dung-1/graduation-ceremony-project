@@ -1,0 +1,280 @@
+/* Căn chỉnh và định dạng tổng thể */
+
+.invitation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(235, 96, 172, 0.295), rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.invitation-content {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.message-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    /* Tăng khoảng cách giữa message-form và message-list */
+}
+
+.message-form,
+.message-list {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    .message-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .message-form,
+    .message-list {
+        flex: 1;
+    }
+}
+
+.invitation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background-image: linear-gradient( rgba(235, 96, 172, 0.295), /* Điều chỉnh độ mờ */
+    rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.invitation-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.invitation-content {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header .title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.header .university-name {
+    font-size: 32px;
+    margin: 10px 0 20px 0;
+}
+
+
+/* Giữ nguyên các styles hiện có và thêm các styles mới sau đây */
+
+.message-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.message-form,
+.message-list {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.475);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-form h2,
+.message-list h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.message-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-form input,
+.message-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.message-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-form button:hover {
+    background-color: #45a049;
+}
+
+.message-scroll {
+    height: 300px;
+    overflow-y: auto;
+}
+
+.message-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+    .message-form input,
+    .message-form textarea {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-form input,
+    .message-form textarea {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .message-form input,
+    .message-form textarea {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .message-section {
+        margin-left: 25px;
+    }
+}
+
+.message-section,
+.message-list {
+    padding: 0 10px;
+    /* Add padding to ensure content is evenly spaced from the edges */
+}
+
+@media (max-width: 768px) {
+    .message-section,
+    .message-list {
+        padding: 0 15px;
+        /* Increase padding for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .message-section,
+    .message-list {
+        padding: 0 20px;
+        /* Further increase padding for even smaller devices */
+    }
+}
+
+@media (max-width: 360px) {
+    .message-section,
+    .message-list {
+        padding: 0 25px;
+        /* Maximum padding for the smallest devices */
+    }
+}
+
+@media (max-width: 768px) {
+    .message-section {
+        flex-direction: column;
+    }
+    .message-form,
+    .message-list {
+        width: 95%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-form input,
+    .message-form textarea {
+        width: 92%;
+        font-size: 14px;
+    }
+    .message-form button {
+        width: 100%;
+        font-size: 14px;
+    }
+    .message-list h2 {
+        font-size: 18px;
+    }
+    .message-item {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .message-form input,
+    .message-form textarea,
+    .message-form button {
+        font-size: 12px;
+    }
+    .message-list h2 {
+        font-size: 16px;
+    }
+    .message-item {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .message-section {
+        gap: 20px;
+        /* Giảm khoảng cách cho màn hình nhỏ hơn */
+    }
+}
+
+@media (max-width: 768px) {
+    .message-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

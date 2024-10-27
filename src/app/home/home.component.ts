@@ -1,11 +1,12 @@
-import { Component, OnInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, PLATFORM_ID, Inject ,ViewEncapsulation} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class HomeComponent implements OnInit, OnDestroy {
   days: string = '00';
