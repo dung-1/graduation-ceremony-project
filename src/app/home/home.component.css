@@ -1,0 +1,226 @@
+/* Căn chỉnh và định dạng tổng thể */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.invitation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient( rgba(235, 96, 172, 0.295), /* Điều chỉnh độ mờ */
+    rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.invitation-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.invitation-content {
+    /* max-width: 80%; */
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 20px;
+    /* border-radius: 10px; */
+}
+
+.header .title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.header .university-name {
+    font-size: 32px;
+    margin: 10px 0 20px 0;
+}
+
+.message {
+    font-size: 24px;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.details {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+.footer .signature {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.countdown-item {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.countdown-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.countdown-circle::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+    border: 2px solid;
+    border-radius: 50%;
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+        border-color: #ff6b6b;
+    }
+    25% {
+        border-color: #4ecdc4;
+    }
+    50% {
+        border-color: #45b7d1;
+    }
+    75% {
+        border-color: #96c93d;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-color: #ff6b6b;
+    }
+}
+
+.countdown-item span {
+    font-size: 14px;
+}
+
+
+/* Responsive styles for countdown circles */
+
+@media (max-width: 768px) {
+    .countdown-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+    .countdown-circle::after {
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+    .countdown-circle::after {
+        top: -3px;
+        right: -3px;
+        bottom: -3px;
+        left: -3px;
+    }
+    .countdown-item span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .countdown-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .countdown-circle::after {
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+    }
+    .countdown-item span {
+        font-size: 10px;
+    }
+}
+
+
+/* Responsive cho thiết bị nhỏ */
+
+@media (max-width: 768px) {
+    .invitation-content {
+        max-width: 90%;
+    }
+    .header .title {
+        font-size: 36px;
+    }
+    .header .university-name {
+        font-size: 24px;
+    }
+    .message {
+        font-size: 20px;
+    }
+    .details {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .title {
+        font-size: 28px;
+    }
+    .header .university-name {
+        font-size: 20px;
+    }
+    .message {
+        font-size: 18px;
+    }
+    .details {
+        font-size: 16px;
+    }
+}

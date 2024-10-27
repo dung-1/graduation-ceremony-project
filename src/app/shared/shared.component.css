@@ -1,0 +1,7 @@
+.main-container {
+    height: 80vh;
+}
+
+.menu-spacer {
+    flex: 1 1 auto;
+}
