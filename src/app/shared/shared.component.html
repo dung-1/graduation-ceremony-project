@@ -54,6 +54,25 @@
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill>
+            <!-- Thêm nút điều hướng -->
+            <div class="navigation-buttons">
+                <button mat-raised-button 
+                        color="primary" 
+                        (click)="prevPage()" 
+                        [disabled]="!canPrev()">
+                    <mat-icon>arrow_back</mat-icon>
+                    Trang trước
+                </button>
+                
+                <button mat-raised-button 
+                        color="primary" 
+                        (click)="nextPage()" 
+                        [disabled]="!canNext()">
+                    Trang tiếp
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </div>
+
             <!-- Main content -->
             <router-outlet></router-outlet>
         </mat-sidenav-content>

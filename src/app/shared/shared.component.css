@@ -5,3 +5,37 @@
 .menu-spacer {
     flex: 1 1 auto;
 }
+
+.navigation-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.navigation-buttons button {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navigation-buttons button mat-icon {
+    font-size: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .navigation-buttons {
+        bottom: 10px;
+        gap: 10px;
+    }
+
+    .navigation-buttons button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
