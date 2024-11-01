@@ -60,9 +60,15 @@ export class MessageService {
     }
 
     try {
+      // Create date with Vietnam timezone (UTC+7)
+      const vietnamTime = new Date(new Date().getTime() + (7 * 60 * 60 * 1000));
+      
       const { data, error } = await this.supabase
         .from('messages')
-        .insert([message])
+        .insert([{
+          ...message,
+          timestamp: vietnamTime.toISOString()
+        }])
         .select();
 
       if (error) throw error;
