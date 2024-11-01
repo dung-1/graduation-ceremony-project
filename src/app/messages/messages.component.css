@@ -198,6 +198,7 @@ html {
     margin-top: 5px;
 }
 
+
 /* Responsive styles */
 
 @media (max-width: 768px) {
@@ -275,7 +276,7 @@ html {
         font-size: 14px;
     }
     .message-form button {
-        width: 100%;
+        /* width: 100%; */
         font-size: 14px;
     }
     .message-list h2 {
@@ -314,23 +315,53 @@ html {
     }
 }
 
+@media (max-width: 768px) {
+    .mic-button {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mic-button {
+        width: 35px;
+        height: 35px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .mic-button {
+        width: 30px;
+        height: 30px;
+        padding: 3px;
+    }
+}
+
 .textarea-container {
     position: relative;
     display: flex;
     align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .textarea-container textarea {
     flex: 1;
     resize: vertical;
+    padding-right: 50px;
+    width: calc(100% - 50px);
 }
 
 .mic-button {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
-    margin-left: 8px;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -360,5 +391,50 @@ html {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+
+/* Responsive styles for mic button */
+
+@media (max-width: 768px) {
+    .textarea-container textarea {
+        padding-right: 45px;
+        width: calc(100% - 45px);
+    }
+    .mic-button {
+        width: 35px;
+        height: 35px;
+        padding: 6px;
+        right: 4px;
+        bottom: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .textarea-container textarea {
+        padding-right: 40px;
+        width: calc(100% - 40px);
+    }
+    .mic-button {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        right: 3px;
+        bottom: 3px;
+    }
+}
+
+@media (max-width: 360px) {
+    .textarea-container textarea {
+        padding-right: 35px;
+        width: calc(100% - 35px);
+    }
+    .mic-button {
+        width: 25px;
+        height: 25px;
+        padding: 4px;
+        right: 2px;
+        bottom: 2px;
     }
 }

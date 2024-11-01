@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,16 +6,25 @@ import { Router } from '@angular/router';
   templateUrl: './shared.component.html',
   styleUrl: './shared.component.css'
 })
-export class SharedComponent {
+export class SharedComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
+  private fireworkAudio: HTMLAudioElement;
+  isPlaying: boolean = false;
+  showEffects: boolean = false;
+
   // Định nghĩa mảng các route theo thứ tự
   routes = [
     { path: '/home', label: 'Trang chủ' },
-    { path: '/event', label: 'Sự kiện' },
+    // { path: '/event', label: 'Sự kiện' },
     { path: '/messages', label: 'Tin chúc mừng' },
-    { path: '/money', label: 'Mừng tốt nghiệp' }
+    // { path: '/money', label: 'Mừng tốt nghiệp' }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    // Khởi tạo audio trong constructor
+    this.fireworkAudio = new Audio('assets/Tiengphaohoa.mp3');
+    this.fireworkAudio.load();
+  }
 
   // Lấy index của trang hiện tại
   getCurrentPageIndex(): number {
@@ -47,5 +56,86 @@ export class SharedComponent {
   // Kiểm tra xem có thể next không
   canNext(): boolean {
     return this.getCurrentPageIndex() < this.routes.length - 1;
+  }
+
+  toggleMusic() {
+    const audio = this.audioPlayer?.nativeElement;
+    if (audio) {
+      try {
+        if (this.isPlaying) {
+          audio.pause();
+        } else {
+          const playPromise = audio.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log("Audio playback error:", error);
+            });
+          }
+        }
+        this.isPlaying = !this.isPlaying;
+      } catch (error) {
+        console.error('Error toggling music:', error);
+      }
+    }
+  }
+
+  toggleEffects() {
+    this.showEffects = !this.showEffects;
+    if (this.showEffects) {
+      this.playFireworkSound();
+    } else {
+      this.stopFireworkSound();
+    }
+  }
+
+  playFireworkSound() {
+    try {
+      if (this.fireworkAudio) {
+        this.fireworkAudio.currentTime = 0;
+        this.fireworkAudio.loop = true;
+        const playPromise = this.fireworkAudio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log('Firework sound error:', error);
+          });
+        }
+      }
+    } catch (error) {
+      console.error('Error playing firework sound:', error);
+    }
+  }
+
+  stopFireworkSound() {
+    try {
+      if (this.fireworkAudio) {
+        this.fireworkAudio.pause();
+        this.fireworkAudio.currentTime = 0;
+        this.fireworkAudio.loop = false;
+      }
+    } catch (error) {
+      console.error('Error stopping firework sound:', error);
+    }
+  }
+
+  ngAfterViewInit() {
+    // Set volume for background music
+    if (this.audioPlayer?.nativeElement) {
+      this.audioPlayer.nativeElement.volume = 0.5;
+    }
+    // Set volume for firework sound
+    if (this.fireworkAudio) {
+      this.fireworkAudio.volume = 0.3;
+    }
+  }
+
+  ngOnDestroy() {
+    try {
+      if (this.fireworkAudio) {
+        this.fireworkAudio.pause();
+        this.fireworkAudio.currentTime = 0;
+      }
+    } catch (error) {
+      console.error('Error in cleanup:', error);
+    }
   }
 }

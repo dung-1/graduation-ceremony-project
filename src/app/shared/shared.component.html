@@ -4,7 +4,7 @@
             <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Dung CTS</span>
+            <span>DuLiTiTh</span>
             <span class="menu-spacer"></span>
             <div fxShow="true" fxHide.lt-md>
                 <!-- The following menu items will be hidden on both SM and XS screen sizes -->
@@ -39,42 +39,68 @@
                     <mat-icon>home</mat-icon>
                     <span>Trang chủ</span>
                 </a>
-                <a routerLink="/event" mat-list-item>
+                <!-- <a routerLink="/event" mat-list-item>
                     <mat-icon>event</mat-icon>
                     <span>Sự kiện</span>
-                </a>
+                </a> -->
                 <a routerLink="/messages" mat-list-item>
                     <mat-icon>celebration</mat-icon>
                     <span>Tin chúc mừng</span>
                 </a>
-                <a routerLink="/money" mat-list-item>
+                <!-- <a routerLink="/money" mat-list-item>
                     <mat-icon>school</mat-icon>
                     <span>Mừng tốt nghiệp</span>
-                </a>
+                </a> -->
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill>
-            <!-- Thêm nút điều hướng -->
-            <div class="navigation-buttons">
-                <button mat-raised-button 
-                        color="primary" 
-                        (click)="prevPage()" 
-                        [disabled]="!canPrev()">
-                    <mat-icon>arrow_back</mat-icon>
-                    Trang trước
+            <!-- Music player -->
+            <div class="music-player">
+                <button mat-fab color="primary" (click)="toggleMusic()" [matTooltip]="isPlaying ? 'Tạm dừng' : 'Phát nhạc'">
+                    <mat-icon>{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
                 </button>
-                
-                <button mat-raised-button 
-                        color="primary" 
-                        (click)="nextPage()" 
-                        [disabled]="!canNext()">
-                    Trang tiếp
-                    <mat-icon>arrow_forward</mat-icon>
+                <audio #audioPlayer preload="auto">
+                    <source src="assets/Springday.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- Firework button -->
+            <div class="firework-button">
+                <button mat-fab color="primary" (click)="toggleEffects()">
+                    <mat-icon>celebration</mat-icon>
                 </button>
             </div>
 
-            <!-- Main content -->
+            <!-- Container cho hiệu ứng tuyết -->
+            <!-- <div class="snow-container" *ngIf="showEffects">
+                <div class="snowflake" *ngFor="let i of [].constructor(150)"></div>
+            </div> -->
+
+            <!-- Container cho hiệu ứng pháo hoa -->
+            <div class="fireworks-container" *ngIf="showEffects">
+                <div class="firework" *ngFor="let i of [].constructor(15)"></div>
+            </div>
+
+            <!-- Navigation buttons và router-outlet giữ nguyên -->
+            <div class="navigation-buttons">
+                <button mat-raised-button color="primary" (click)="prevPage()" [disabled]="!canPrev()">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+
+                <button mat-raised-button color="primary" (click)="nextPage()" [disabled]="!canNext()">
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </div>
             <router-outlet></router-outlet>
+
+            <!-- Thêm vào phần cuối của mat-sidenav-content -->
+            <audio #audioPlayer>
+                <source src="/assets/Springday.mp3" type="audio/mp3">
+            </audio>
+            <audio #fireworkSound>
+                <source src="/assets/Tiengphaohoa.mp3" type="audio/mp3">
+            </audio>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
