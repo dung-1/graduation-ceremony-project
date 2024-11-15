@@ -1,0 +1,14 @@
+{
+    "TOOLBAR": {
+      "HOME": "ホーム",
+      "EVENTS": "イベント",
+      "CONGRATULATIONS": "お祝い",
+      "GRADUATION": "卒業式"
+    },
+    "GRADUATION": {
+      "TITLE": "卒業式",
+      "STUDENT_NAME": "ホアン・ヴァン・A",
+      "INVITATION": "私の卒業式にご出席いただき、この喜びの瞬間を共有していただければ幸いです。"
+    }
+  }
+  

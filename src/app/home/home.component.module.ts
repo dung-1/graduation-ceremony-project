@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -13,7 +13,8 @@ import { HomeComponent } from './home.component';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule,
   ],
   providers: [{ provide: 'DISABLE_SSR', useValue: true }],
 

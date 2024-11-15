@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MessageService } from './services/message.service';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+// Hàm tạo loader cho i18n
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -15,15 +19,18 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
-    MatButtonModule,
-    MatIconModule
+    TranslateModule.forRoot({
+      defaultLanguage: 'vi',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [
-    provideClientHydration(),
-    provideHttpClient(withFetch()),
-    MessageService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

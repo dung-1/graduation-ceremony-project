@@ -15,9 +15,12 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
-  declarations: [SharedComponent],
+  declarations: [SharedComponent, LanguageSelectorComponent],
   exports: [SharedComponent],
 
   imports: [
@@ -36,7 +39,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule,
+    TranslateModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 

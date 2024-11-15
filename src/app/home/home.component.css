@@ -13,8 +13,8 @@ html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: linear-gradient( rgba(235, 96, 172, 0.295), /* Điều chỉnh độ mờ */
-    rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
+    background: #db8c24b4;
+    /* background-image: linear-gradient( rgba(235, 96, 172, 0.295), rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

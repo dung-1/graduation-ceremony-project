@@ -1,17 +1,5 @@
 /* Căn chỉnh và định dạng tổng thể */
 
-.invitation-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: linear-gradient(rgba(235, 96, 172, 0.295), rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
 .invitation-content {
     width: 80%;
     max-width: 1200px;
@@ -59,8 +47,8 @@ html {
     align-items: center;
     height: auto;
     min-height: 100vh;
-    background-image: linear-gradient( rgba(235, 96, 172, 0.295), /* Điều chỉnh độ mờ */
-    rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
+    /* rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG') */
+    background: #db8c24b4;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -167,7 +155,7 @@ html {
 }
 
 .message-content-wrapper {
-    display: flex;
+    /* display: flex; */
     align-items: baseline;
 }
 
@@ -188,7 +176,7 @@ html {
 
 .message-item p {
     margin: 0;
-    display: inline;
+    /* display: inline; */
 }
 
 .message-header small {
