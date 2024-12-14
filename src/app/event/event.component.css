@@ -46,6 +46,10 @@ html {
     align-items: center;
     height: auto;
     position: relative;
+    background-image: linear-gradient(rgba(235, 96, 172, 0.295), rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .invitation-container::before {
@@ -59,7 +63,6 @@ html {
     filter: blur(5px);
     z-index: -1;
 }
-
 
 .header .title {
     font-size: 48px;

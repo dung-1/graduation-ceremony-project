@@ -1,5 +1,5 @@
 <div class="main-container">
-  <mat-toolbar color="primary">
+    <mat-toolbar color="primary">
         <mat-toolbar-row>
             <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
@@ -40,25 +40,24 @@
                     <mat-icon>home</mat-icon>
                     <span>Trang chủ</span>
                 </a>
-                <!-- <a routerLink="/event" mat-list-item>
+                <a routerLink="/event" mat-list-item>
                     <mat-icon>event</mat-icon>
                     <span>Sự kiện</span>
-                </a> -->
+                </a>
                 <a routerLink="/messages" mat-list-item>
                     <mat-icon>celebration</mat-icon>
                     <span>Tin chúc mừng</span>
                 </a>
-                <!-- <a routerLink="/money" mat-list-item>
+                <a routerLink="/money" mat-list-item>
                     <mat-icon>school</mat-icon>
                     <span>Mừng tốt nghiệp</span>
-                </a> -->
+                </a>
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill>
             <!-- Music player -->
             <div class="music-player">
-                <button mat-fab color="primary" (click)="toggleMusic()"
-                    [matTooltip]="isPlaying ? 'Tạm dừng' : 'Phát nhạc'">
+                <button mat-fab color="primary" (click)="toggleMusic()" [matTooltip]="isPlaying ? 'Tạm dừng' : 'Phát nhạc'">
                     <mat-icon>{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
                 </button>
                 <audio #audioPlayer preload="auto">

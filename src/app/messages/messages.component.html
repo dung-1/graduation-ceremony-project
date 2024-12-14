@@ -8,17 +8,15 @@
             <div class="message-form">
                 <h2>Gửi lời chúc</h2>
                 <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-                    <input type="text" formControlName="name" placeholder="Tên của bạn" 
-                           [class.invalid]="messageForm.get('name')?.invalid && messageForm.get('name')?.touched">
+                    <input type="text" formControlName="name" placeholder="Tên của bạn" [class.invalid]="messageForm.get('name')?.invalid && messageForm.get('name')?.touched">
                     <div class="error" *ngIf="messageForm.get('name')?.invalid && messageForm.get('name')?.touched">
                         <small *ngIf="messageForm.get('name')?.errors?.['required']">Vui lòng nhập tên</small>
                         <small *ngIf="messageForm.get('name')?.errors?.['minlength']">Tên phải có ít nhất 2 ký tự</small>
                     </div>
 
                     <div class="textarea-container">
-                        <textarea formControlName="content" placeholder="Nội dung chúc mừng"
-                                 [class.invalid]="messageForm.get('content')?.invalid && messageForm.get('content')?.touched"></textarea>
-                        <button type="button" class="mic-button" (click)="toggleRecording()" [class.recording]="isRecording">
+                        <textarea formControlName="content" placeholder="Nội dung chúc mừng" [class.invalid]="messageForm.get('content')?.invalid && messageForm.get('content')?.touched"></textarea>
+                        <button title="Mô tả nút" type="button" class="mic-button" (click)="toggleRecording()" [class.recording]="isRecording">
                             <i class="fas fa-microphone"></i>
                         </button>
                     </div>

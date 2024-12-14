@@ -15,9 +15,9 @@ export class SharedComponent implements AfterViewInit, OnDestroy {
   // Định nghĩa mảng các route theo thứ tự
   routes = [
     { path: '/home', label: 'Trang chủ' },
-    // { path: '/event', label: 'Sự kiện' },
+    { path: '/event', label: 'Sự kiện' },
     { path: '/messages', label: 'Tin chúc mừng' },
-    // { path: '/money', label: 'Mừng tốt nghiệp' }
+    { path: '/money', label: 'Mừng tốt nghiệp' }
   ];
 
   constructor(private router: Router) {
