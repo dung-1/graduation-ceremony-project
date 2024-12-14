@@ -4,7 +4,7 @@
             <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>DuLiTiTh</span>
+            <span> <a routerLink="/home" mat-button>DuLiTiTh</a> </span>
             <span class="menu-spacer"></span>
             <div fxShow="true" fxHide.lt-md>
                 <a routerLink="/home" mat-button>
@@ -38,19 +38,20 @@
                 </a>
                 <a routerLink="/home" mat-list-item>
                     <mat-icon>home</mat-icon>
-                    <span>Trang chủ</span>
+                    <span>{{ 'TOOLBAR.HOME' | translate }}</span>
                 </a>
                 <a routerLink="/event" mat-list-item>
                     <mat-icon>event</mat-icon>
-                    <span>Sự kiện</span>
+                    <span>{{ 'TOOLBAR.EVENTS' | translate }}</span>
+
                 </a>
                 <a routerLink="/messages" mat-list-item>
                     <mat-icon>celebration</mat-icon>
-                    <span>Tin chúc mừng</span>
+                    <span>{{ 'TOOLBAR.CONGRATULATIONS' | translate }}</span>
                 </a>
                 <a routerLink="/money" mat-list-item>
                     <mat-icon>school</mat-icon>
-                    <span>Mừng tốt nghiệp</span>
+                    <span>{{ 'TOOLBAR.GRADUATION' | translate }}</span>
                 </a>
             </mat-nav-list>
         </mat-sidenav>

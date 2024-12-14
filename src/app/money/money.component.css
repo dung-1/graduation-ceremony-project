@@ -1,28 +1,77 @@
 /* Căn chỉnh và định dạng tổng thể */
 
+.invitation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background-image: linear-gradient(rgba(235, 96, 172, 0.295), rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
 .invitation-content {
-    width: 80%;
-    max-width: 1200px;
+    max-width: 500px;
     text-align: center;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 50px;
 }
 
-.message-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    /* Tăng khoảng cách giữa message-form và message-list */
-}
-
-.message-form,
-.message-list {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.1);
+.event-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
+
+.event-section img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Media Queries cho Tablet */
+
+@media screen and (max-width: 768px) {
+    .invitation-content {
+        max-width: 400px;
+    }
+    .event-section {
+        padding: 15px;
+    }
+    .event-section img {
+        max-width: 250px;
+    }
+}
+
+
+/* Media Queries cho Mobile */
+
+@media screen and (max-width: 480px) {
+    .invitation-container {
+        padding: 10px;
+    }
+    .invitation-content {
+        max-width: 300px;
+    }
+    .event-section {
+        padding: 10px;
+    }
+    .event-section img {
+        max-width: 300px;
+        height: 400px;
+    }
+}
+
+
+/* Đảm bảo không có scroll */
 
 body,
 html {
@@ -30,27 +79,6 @@ html {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    .message-section {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-    }
-    .message-form,
-    .message-list {
-        flex: 1;
-    }
-}
-
-.invitation-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    position: relative;
-    background-image: linear-gradient(rgba(235, 96, 172, 0.295), rgba(255, 255, 255, 0.297)), url('../../assets/MINH6589.JPG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .invitation-container::before {
