@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './shared.component.html',
   styleUrl: './shared.component.css'
 })
-export class SharedComponent implements AfterViewInit, OnDestroy {
+export class SharedComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
   private fireworkAudio: HTMLAudioElement;
   isPlaying: boolean = false;
@@ -24,6 +24,9 @@ export class SharedComponent implements AfterViewInit, OnDestroy {
     // Khởi tạo audio trong constructor
     this.fireworkAudio = new Audio('assets/Tiengphaohoa.mp3');
     this.fireworkAudio.load();
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   // Lấy index của trang hiện tại

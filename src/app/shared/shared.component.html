@@ -1,12 +1,12 @@
 <div class="main-container">
     <mat-toolbar color="primary">
         <mat-toolbar-row>
-            <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+            <!-- <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
-            </button>
+            </button> -->
             <span> <a routerLink="/home" mat-button>DuLiTiTh</a> </span>
             <span class="menu-spacer"></span>
-            <div fxShow="true" fxHide.lt-md>
+            <!-- <div fxShow="true" fxHide.lt-md>
                 <a routerLink="/home" mat-button>
                     <mat-icon>home</mat-icon>
                     <span>{{ 'TOOLBAR.HOME' | translate }}</span>
@@ -23,14 +23,14 @@
                     <mat-icon>school</mat-icon>
                     <span>{{ 'TOOLBAR.GRADUATION' | translate }}</span>
                 </a>
-            </div>
+            </div> -->
             <app-language-selector></app-language-selector>
         </mat-toolbar-row>
     </mat-toolbar>
 
 
     <mat-sidenav-container fxFlexFill>
-        <mat-sidenav #sidenav>
+        <!-- <mat-sidenav #sidenav>
             <mat-nav-list>
                 <a (click)="sidenav.toggle()" href="" mat-list-item>
                     <mat-icon>close</mat-icon>
@@ -54,7 +54,7 @@
                     <span>{{ 'TOOLBAR.GRADUATION' | translate }}</span>
                 </a>
             </mat-nav-list>
-        </mat-sidenav>
+        </mat-sidenav> -->
         <mat-sidenav-content fxFlexFill>
             <!-- Music player -->
             <div class="music-player">
@@ -73,19 +73,13 @@
                     <mat-icon>celebration</mat-icon>
                 </button>
             </div>
-
-            <!-- Container cho hiệu ứng tuyết -->
-            <!-- <div class="snow-container" *ngIf="showEffects">
-                <div class="snowflake" *ngFor="let i of [].constructor(150)"></div>
-            </div> -->
-
             <!-- Container cho hiệu ứng pháo hoa -->
             <div class="fireworks-container" *ngIf="showEffects">
                 <div class="firework" *ngFor="let i of [].constructor(15)"></div>
             </div>
 
             <!-- Navigation buttons và router-outlet giữ nguyên -->
-            <div class="navigation-buttons">
+            <!-- <div class="navigation-buttons">
                 <button mat-raised-button color="primary" (click)="prevPage()" [disabled]="!canPrev()">
                     <mat-icon>arrow_back</mat-icon>
                 </button>
@@ -93,7 +87,7 @@
                 <button mat-raised-button color="primary" (click)="nextPage()" [disabled]="!canNext()">
                     <mat-icon>arrow_forward</mat-icon>
                 </button>
-            </div>
+            </div> -->
             <router-outlet></router-outlet>
 
             <!-- Thêm vào phần cuối của mat-sidenav-content -->

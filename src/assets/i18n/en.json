@@ -1,13 +1,25 @@
 {
-    "TOOLBAR": {
-      "HOME": "Home",
-      "EVENTS": "Events",
-      "CONGRATULATIONS": "Congratulations",
-      "GRADUATION": "Graduation"
+  "TOOLBAR": {
+    "HOME": "Home",
+    "EVENTS": "Events",
+    "CONGRATULATIONS": "Congratulations",
+    "GRADUATION": "Graduation"
+  },
+  "GRADUATION": {
+    "TITLE": "GRADUATION CEREMONY",
+    "STUDENT_NAME": "Nguyen Van Dung",
+    "INVITATION": "You are cordially invited to attend my graduation ceremony to share this joyous moment.",
+    "DETAILS": {
+      "TIME_LABEL": "Time",
+      "TIME": "January 10, 2025 at 13:00",
+      "LOCATION_LABEL": "Location",
+      "LOCATION": "White Lotus Hotel, 05-07 Hoang Hoa Tham Street, Hue City"
     },
-    "GRADUATION": {
-      "TITLE": "GRADUATION CEREMONY",
-      "STUDENT_NAME": "Hoang Van A",
-      "INVITATION": "You are cordially invited to attend my graduation ceremony to share this joyous moment."
+    "COUNTDOWN": {
+      "DAYS": "Days",
+      "HOURS": "Hours",
+      "MINUTES": "Minutes",
+      "SECONDS": "Seconds"
     }
   }
+}

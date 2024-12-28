@@ -16,8 +16,8 @@ interface Language {
 
 export class LanguageSelectorComponent {
   languages: Language[] = [
-    { code: 'en', name: 'English', flag: 'assets/flag/en.png' },
     { code: 'vi', name: 'VietNamese', flag: 'assets/flag/vn.png' },
+    { code: 'en', name: 'English', flag: 'assets/flag/en.png' },
     { code: 'ja', name: '日本語', flag: 'assets/flag/jp.png' }
   ];
 

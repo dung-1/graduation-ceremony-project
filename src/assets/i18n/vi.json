@@ -1,13 +1,25 @@
 {
-    "TOOLBAR": {
-      "HOME": "Trang chủ",
-      "EVENTS": "Sự kiện",
-      "CONGRATULATIONS": "Tin chúc mừng",
-      "GRADUATION": "Mừng tốt nghiệp"
+  "TOOLBAR": {
+    "HOME": "Trang chủ",
+    "EVENTS": "Sự kiện",
+    "CONGRATULATIONS": "Tin chúc mừng",
+    "GRADUATION": "Mừng tốt nghiệp"
+  },
+  "GRADUATION": {
+    "TITLE": "LỄ TỐT NGHIỆP",
+    "STUDENT_NAME": "Nguyễn Văn Dụng",
+    "INVITATION": "Thân mời Bạn tới tham dự lễ tốt nghiệp của mình để chung chia niềm vui nhỏ bé này nhé."
+  ,"DETAILS": {
+      "TIME_LABEL": "Thời gian",
+      "TIME": "13:00, Ngày 10 tháng 01 năm 2025",
+      "LOCATION_LABEL": "Địa điểm",
+      "LOCATION": "Khách sạn White Lotus, Số 05 - 07 Hoàng hoa thám, Tp Huế"
     },
-    "GRADUATION": {
-      "TITLE": "LỄ TỐT NGHIỆP",
-      "STUDENT_NAME": "Hoàng Văn A",
-      "INVITATION": "Thân mời Bạn tới tham dự lễ tốt nghiệp của mình để chung chia niềm vui nhỏ bé này nhé."
+    "COUNTDOWN": {
+      "DAYS": "Ngày",
+      "HOURS": "Giờ", 
+      "MINUTES": "Phút",
+      "SECONDS": "Giây"
     }
   }
+}

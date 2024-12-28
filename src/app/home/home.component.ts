@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   minutes: string = '00';
   seconds: string = '00';
   private countdownInterval: any;
-  private graduationDate = new Date('2024-12-21T07:00:00').getTime();
+  private graduationDate = new Date('2025-01-10T13:00:00').getTime();
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,

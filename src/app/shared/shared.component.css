@@ -183,77 +183,7 @@
 }
 
 
-/* Apply animations to elements */
-
-.snowflake {
-    animation: snowfall 10s linear infinite;
-}
-
-
-/* Randomize positions and delays */
-
-.snowflake:nth-child(2n) {
-    left: 10%;
-    animation-delay: 1s;
-}
-
-.snowflake:nth-child(3n) {
-    left: 20%;
-    animation-delay: 2s;
-}
-
-.snowflake:nth-child(4n) {
-    left: 30%;
-    animation-delay: 3s;
-}
-
-.snowflake:nth-child(5n) {
-    left: 40%;
-    animation-delay: 4s;
-}
-
-.snowflake:nth-child(6n) {
-    left: 50%;
-    animation-delay: 5s;
-}
-
-.snowflake:nth-child(7n) {
-    left: 60%;
-    animation-delay: 6s;
-}
-
-.snowflake:nth-child(8n) {
-    left: 70%;
-    animation-delay: 7s;
-}
-
-.snowflake:nth-child(9n) {
-    left: 80%;
-    animation-delay: 8s;
-}
-
-.snowflake:nth-child(10n) {
-    left: 90%;
-    animation-delay: 9s;
-}
-
-
-/* Thêm kích thước ngẫu nhiên cho tuyết */
-
-.snowflake:nth-child(3n) {
-    width: 8px;
-    height: 8px;
-}
-
-.snowflake:nth-child(4n) {
-    width: 12px;
-    height: 12px;
-}
-
-.snowflake:nth-child(5n) {
-    width: 6px;
-    height: 6px;
-}
+/* Firework positions */
 
 .firework:nth-child(1) {
     left: 20%;

@@ -7,8 +7,20 @@
     },
     "GRADUATION": {
       "TITLE": "卒業式",
-      "STUDENT_NAME": "ホアン・ヴァン・A",
+      "STUDENT_NAME": "グエン・ヴァン・ズン",
       "INVITATION": "私の卒業式にご出席いただき、この喜びの瞬間を共有していただければ幸いです。"
+     , "DETAILS": {
+        "TIME_LABEL": "日時",
+        "TIME": "2025年1月10日 13時00分",
+        "LOCATION_LABEL": "場所",
+        "LOCATION": "ホワイトロータスホテル、05-07 ホアンホアタム通り、フエ市"
+      },
+      "COUNTDOWN": {
+        "DAYS": "日",
+        "HOURS": "時間",
+        "MINUTES": "分",
+        "SECONDS": "秒"
+      }
     }
   }
   
