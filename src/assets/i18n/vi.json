@@ -3,7 +3,9 @@
     "HOME": "Trang chủ",
     "EVENTS": "Sự kiện",
     "CONGRATULATIONS": "Tin chúc mừng",
-    "GRADUATION": "Mừng tốt nghiệp"
+    "GRADUATION": "Mừng tốt nghiệp",
+    "CONTACT": "Liên hệ: 0327.049.143"
+
   },
   "GRADUATION": {
     "TITLE": "LỄ TỐT NGHIỆP",
@@ -20,6 +22,11 @@
       "HOURS": "Giờ", 
       "MINUTES": "Phút",
       "SECONDS": "Giây"
+    },
+    "RSVP": {
+      "DINNER_TIME": "Tiệc mừng vào lúc: 17:30",
+      "DINNER_LOCATION": "Tại: Hoàng Đạt Quán (125 Phan Đình Phùng, Tp.Huế)",
+      "MAP_LINK": "Tại đây"
     }
   }
 }

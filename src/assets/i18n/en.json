@@ -3,7 +3,9 @@
     "HOME": "Home",
     "EVENTS": "Events",
     "CONGRATULATIONS": "Congratulations",
-    "GRADUATION": "Graduation"
+    "GRADUATION": "Graduation",
+    "CONTACT": "Contact: 0327.049.143"
+
   },
   "GRADUATION": {
     "TITLE": "GRADUATION CEREMONY",
@@ -20,6 +22,11 @@
       "HOURS": "Hours",
       "MINUTES": "Minutes",
       "SECONDS": "Seconds"
+    },
+    "RSVP": {
+      "DINNER_TIME": "Celebration dinner at: 17:30",
+      "DINNER_LOCATION": "At: Hoang Dat Restaurant (125 Phan Dinh Phung St., Hue City)", 
+      "MAP_LINK": "Here"
     }
   }
 }

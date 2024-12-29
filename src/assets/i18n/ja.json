@@ -3,7 +3,9 @@
       "HOME": "ホーム",
       "EVENTS": "イベント",
       "CONGRATULATIONS": "お祝い",
-      "GRADUATION": "卒業式"
+      "GRADUATION": "卒業式",
+      "CONTACT": "連絡先: 0327.049.143"
+
     },
     "GRADUATION": {
       "TITLE": "卒業式",
@@ -20,6 +22,11 @@
         "HOURS": "時間",
         "MINUTES": "分",
         "SECONDS": "秒"
+      },
+      "RSVP": {
+        "DINNER_TIME": "お祝いの宴会は17時30分より",
+        "DINNER_LOCATION": "場所：ホアンダットレストラン（125 ファンディンフン通り、フエ市）",
+        "MAP_LINK": "こちら"
       }
     }
   }
