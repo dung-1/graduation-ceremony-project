@@ -1,35 +1,49 @@
 <div class="invitation-container">
-    <div class="invitation-content">
-        <div class="header">
-            <h1 class="title">{{ 'GRADUATION.TITLE' | translate }}</h1>
-            <h2 class="university-name text-uppercase">{{ 'GRADUATION.STUDENT_NAME' | translate }}</h2>
-        </div>
-        
-        <div class="message">
-            <p>{{ 'GRADUATION.INVITATION' | translate }}</p>
-        </div>
+  <div class="invitation-content">
+    <div class="header">
+      <h1 class="title">{{ "GRADUATION.TITLE" | translate }}</h1>
+      <h2 class="university-name text-uppercase">
+        {{ "GRADUATION.STUDENT_NAME" | translate }}
+      </h2>
+    </div>
 
-        <div class="details">
-            <p><strong>{{ 'GRADUATION.DETAILS.TIME_LABEL' | translate }}:</strong> {{ 'GRADUATION.DETAILS.TIME' | translate }}</p>
-            <p><strong>{{ 'GRADUATION.DETAILS.LOCATION_LABEL' | translate }}:</strong> {{ 'GRADUATION.DETAILS.LOCATION' | translate }}</p>
-        </div>
+    <div class="message">
+      <p>{{ "GRADUATION.INVITATION" | translate }}</p>
+    </div>
 
-        <div class="countdown">
-            <div class="countdown-item">
-                <div class="countdown-circle">{{days || '00'}}</div>
-                <span>{{ 'GRADUATION.COUNTDOWN.DAYS' | translate }}</span>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-circle">{{hours || '00'}}</div>
-                <span>{{ 'GRADUATION.COUNTDOWN.HOURS' | translate }}</span>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-circle">{{minutes || '00'}}</div>
-                <span>{{ 'GRADUATION.COUNTDOWN.MINUTES' | translate }}</span>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-circle">{{seconds || '00'}}</div>
-                <span>{{ 'GRADUATION.COUNTDOWN.SECONDS' | translate }}</span>
-            </div>
-        </div>    </div>
+    <div class="details">
+      <p>
+        <strong>{{ "GRADUATION.DETAILS.TIME_LABEL" | translate }}:</strong>
+        {{ "GRADUATION.DETAILS.TIME" | translate }}
+      </p>
+      <p>
+        <strong>{{ "GRADUATION.DETAILS.LOCATION_LABEL" | translate }}:</strong>
+        {{ "GRADUATION.DETAILS.LOCATION" | translate }} <a href="https://maps.app.goo.gl/WeqxUQ79jFXB9P8g8" target="_blank">Tại đây</a>
+      </p>
+    </div>
+
+    <div class="countdown">
+      <div class="countdown-item">
+        <div class="countdown-circle">{{ days || "00" }}</div>
+        <span>{{ "GRADUATION.COUNTDOWN.DAYS" | translate }}</span>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-circle">{{ hours || "00" }}</div>
+        <span>{{ "GRADUATION.COUNTDOWN.HOURS" | translate }}</span>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-circle">{{ minutes || "00" }}</div>
+        <span>{{ "GRADUATION.COUNTDOWN.MINUTES" | translate }}</span>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-circle">{{ seconds || "00" }}</div>
+        <span>{{ "GRADUATION.COUNTDOWN.SECONDS" | translate }}</span>
+      </div>
+    </div>
+    <div class="rsvp">
+      <p class="rsvp-text">Tiệc mừng vào lúc: 17:30</p>
+      <p class="rsvp-text">Tại: Hoàng Đạt Quán (125 Phan Đình Phùng, Tp.Huế) <a href="https://maps.app.goo.gl/o5uLrjxGWWzKby7Q6" target="_blank">Tại đây</a> </p>
+    </div>
+    <!-- <app-phone-ring></app-phone-ring> -->
+  </div>
 </div>

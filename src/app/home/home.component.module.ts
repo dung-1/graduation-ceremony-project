@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { PhoneRingComponent } from './phone-ring/phone-ring.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, PhoneRingComponent],
   exports: [HomeComponent],
 
   imports: [
