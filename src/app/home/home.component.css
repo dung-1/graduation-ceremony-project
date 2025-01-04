@@ -228,3 +228,7 @@ a{
     color: #e2f837d8;
     text-decoration: none;
 }
+.contact-info a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
